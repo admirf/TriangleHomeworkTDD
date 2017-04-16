@@ -34,8 +34,10 @@ public class Triangle {
      * @param c Side C of triangle
      * @return returns Acute, Obtuse or Right
      */
-    public static TriangleType getAngleType(double a, double b, double c) {
-        return TriangleType.Right;
+    public static TriangleType getAngleType(double a, double b, double c) throws Exception {
+        if(!isTriangle(a, b, c)) throw new Exception("It is not a valid triangle");
+        if(a * a + b * b == c * c || a * a + c * c == b * b || c * c + b * b == a * a) return TriangleType.Right;
+        return TriangleType.Acute;
     }
 
 

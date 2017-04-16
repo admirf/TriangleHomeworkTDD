@@ -19,7 +19,14 @@ class TriangleTest {
 
     @Test
     void testGetAngleType() {
-        assertEquals(Triangle.TriangleType.Right, Triangle.getAngleType(3, 4, 5));
+        try {
+            assertEquals(Triangle.TriangleType.Right, Triangle.getAngleType(3, 4, 5));
+            assertEquals(Triangle.TriangleType.Right, Triangle.getAngleType(0.3, 0.4, 0.5));
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
 }
