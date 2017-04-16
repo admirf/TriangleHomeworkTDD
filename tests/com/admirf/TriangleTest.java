@@ -12,6 +12,7 @@ class TriangleTest {
     @Test
     void testIsTriangle() {
         assertEquals(true, Triangle.isTriangle(3, 4, 5));
+        assertEquals(false, Triangle.isTriangle(3, 5, 9));
     }
 
 }
