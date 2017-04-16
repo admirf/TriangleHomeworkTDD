@@ -37,6 +37,7 @@ public class Triangle {
     public static TriangleType getAngleType(double a, double b, double c) throws Exception {
         if(!isTriangle(a, b, c)) throw new Exception("It is not a valid triangle");
         if(a * a + b * b == c * c || a * a + c * c == b * b || c * c + b * b == a * a) return TriangleType.Right;
+        if(a * a + b * b < c * c || a * a + c * c < b * b || c * c + b * b < a * a) return TriangleType.Obtuse;
         return TriangleType.Acute;
     }
 

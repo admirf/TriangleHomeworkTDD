@@ -22,6 +22,10 @@ class TriangleTest {
         try {
             assertEquals(Triangle.TriangleType.Right, Triangle.getAngleType(3, 4, 5));
             assertEquals(Triangle.TriangleType.Right, Triangle.getAngleType(0.3, 0.4, 0.5));
+            assertEquals(Triangle.TriangleType.Obtuse, Triangle.getAngleType(10, 14, 5));
+            assertEquals(Triangle.TriangleType.Obtuse, Triangle.getAngleType(0.10, 0.14, 0.05));
+            assertEquals(Triangle.TriangleType.Acute, Triangle.getAngleType(7, 6, 5));
+            assertEquals(Triangle.TriangleType.Acute, Triangle.getAngleType(0.7, 0.6, 0.5));
         }
         catch (Exception e) {
             e.printStackTrace();
