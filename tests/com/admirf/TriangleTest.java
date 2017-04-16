@@ -33,4 +33,16 @@ class TriangleTest {
 
     }
 
+    @Test
+    void testGetSideType() {
+        try {
+            assertEquals(Triangle.TriangleType.Equilateral, Triangle.getSideType(3, 3, 3));
+            assertEquals(Triangle.TriangleType.Isosceles, Triangle.getSideType(3, 4, 4));
+            assertEquals(Triangle.TriangleType.None, Triangle.getSideType(3, 4, 5));
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

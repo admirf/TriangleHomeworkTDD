@@ -12,7 +12,8 @@ public class Triangle {
         Obtuse,
         Right,
         Equilateral,
-        Isosceles
+        Isosceles,
+        None
     }
 
     /**
@@ -28,11 +29,7 @@ public class Triangle {
     }
 
     /**
-     * Checks whether the triangle is obtuse, acute or right
-     * @param a Side A of triangle
-     * @param b Side B of triangle
-     * @param c Side C of triangle
-     * @return returns Acute, Obtuse or Right
+
      */
     public static TriangleType getAngleType(double a, double b, double c) throws Exception {
         if(!isTriangle(a, b, c)) throw new Exception("It is not a valid triangle");
@@ -41,6 +38,18 @@ public class Triangle {
         return TriangleType.Acute;
     }
 
-
-
+    /**
+     * Checks whether the triangle is equilateral, isosceles or none of the above
+     * @param a Side A of triangle
+     * @param b Side B of triangle
+     * @param c Side C of triangle
+     * @return returns Equilateral, Isosceles or None if no sides are equal
+     * @throws Exception
+     */
+    public static TriangleType getSideType(double a, double b, double c) throws  Exception {
+        if(!isTriangle(a, b, c)) throw new Exception("It is not a valid triangle");
+        if(a == b && b == c) return TriangleType.Equilateral;
+        if(a == b || b == c || c == a) return TriangleType.Isosceles;
+        return TriangleType.None;
+    }
 }
