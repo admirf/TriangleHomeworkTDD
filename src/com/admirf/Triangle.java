@@ -13,7 +13,7 @@ public class Triangle {
      * @return true if given sides can form a triangle, false otherwise
      */
     public static boolean isTriangle(double a, double b, double c) {
-        if(a + b > c) return true;
+        if(a + b > c && a + c > b && b + c > a) return true;
         else return false;
     }
 
