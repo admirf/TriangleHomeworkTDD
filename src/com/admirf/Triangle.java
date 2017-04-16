@@ -1,9 +1,19 @@
 package com.admirf;
 
+import static com.admirf.Triangle.TriangleType.Acute;
+
 /**
  * Created by admir on 16.04.2017..
  */
 public class Triangle {
+
+    public enum TriangleType {
+        Acute,
+        Obtuse,
+        Right,
+        Equilateral,
+        Isosceles
+    }
 
     /**
      * Checks if whether three sides can form a triangle
@@ -16,5 +26,18 @@ public class Triangle {
         if(a + b > c && a + c > b && b + c > a) return true;
         else return false;
     }
+
+    /**
+     * Checks whether the triangle is obtuse, acute or right
+     * @param a Side A of triangle
+     * @param b Side B of triangle
+     * @param c Side C of triangle
+     * @return returns Acute, Obtuse or Right
+     */
+    public static TriangleType getAngleType(double a, double b, double c) {
+        return TriangleType.Right;
+    }
+
+
 
 }
